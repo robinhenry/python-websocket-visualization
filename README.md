@@ -11,11 +11,11 @@ without having to refress the web-browser page.
 ### websocket_example.py
 
 This [file](websocket_example.py) represents the core of the program and contains:
-  1. A class `WsServer` that represents a Python WebSocket server.
-  2. A class `HTTPServer` used to start an HTTP server.
-  3. A function `start()` to start the web-based visualization.
-  4. A function `update()` to update the web-based visualization.
-  5. A function `close()` to end the visualization.
+  1. A class [`WsServer`](websocket_example.py#L10) that represents a Python WebSocket server.
+  2. A class [`HTTPServer`](websocket_example.py#L52) used to start an HTTP server.
+  3. A function [`start()`](websocket_example.py#L72) to start the web-based visualization.
+  4. A function [`update()`](websocket_example.py#L80) to update the web-based visualization.
+  5. A function [`close()`](websocket_example.py#L87) to end the visualization.
   6. A script that can be used as example.
 
 ### index.html
@@ -40,9 +40,9 @@ You can clone this repository with:
 ``` git clone https://github.com/robinhenry/python-websocket-visualization```
 
 There are very few changes that need to be made to use this framework for any web-based visualization:
-  1. Modify the [index.html](index.html) file to your liking. Make sure to give an `id` property to all elements that you will want to dynamically update.
-  2. Modify the [`ws.onmessage`](dynamicUpdate.js#L13-L16) function to update any HTML elements or interest upon recept of a new message.
-  3. Modify the [`update()`](websocket_example.py#L80-L85) function to add to the WebSocket message any information required by 2.
+  1. Edit the [index.html](index.html) file to your liking. Make sure to give an `id` property to all elements that you will want to dynamically update.
+  2. Edit the [`ws.onmessage`](dynamicUpdate.js#L13-L16) JavaScript function to update any HTML elements or interest upon recept of a new message.
+  3. Edit the [`update()`](websocket_example.py#L80-L85) Python function to add to the WebSocket message any information required by 2.
   4. That's it!
   
 I hope you will find it useful!
