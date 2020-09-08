@@ -1,6 +1,6 @@
 # python-websocket-visualization
 
-*An example of how to use a websocket server to update a web-based visualization in a Python loop.*
+**An example of how to use a websocket server to update a web-based visualization in a Python loop.**
 
 ## Overview
 This repository illustrates how to start and update a web-based visualization tool in real-time from a single Python script in an asynchronous manner, 
@@ -8,7 +8,7 @@ without having to refress the web-browser page.
 
 ## The Components
 
-### (websocket_example.py)[websocket_example.py]
+### [websocket_example.py](websocket_example.py)
 This file represents the core of the program and contains:
   1. A class `WsServer` that represents a Python WebSocket server.
   2. A class `HTTPServer` used to start an HTTP server.
