@@ -20,11 +20,11 @@ This [file](websocket_example.py) represents the core of the program and contain
 
 ### index.html
 
-This (file)[index.html] contains a very simple ~10-line HTML code that renders the progress bar to be updated by the Python loop.
+This [file](index.html) contains a very simple ~10-line HTML code that renders the progress bar to be updated by the Python loop.
 
 ### dynamic_update.js
 
-This (file)[dynamic_update.js] contains the JavaScript code used to communicate with the WebSocket Server and update the status of the progress bar.
+This [file](dynamicUpdate.js) contains the JavaScript code used to communicate with the WebSocket Server and update the status of the progress bar.
 
 ## How It Works
 
