@@ -8,7 +8,8 @@ without having to refress the web-browser page.
 
 ## The Components
 
-### websocket_example.py
+### websocket_example.py
+
 This [file](websocket_example.py) represents the core of the program and contains:
   1. A class `WsServer` that represents a Python WebSocket server.
   2. A class `HTTPServer` used to start an HTTP server.
@@ -18,12 +19,15 @@ This [file](websocket_example.py) represents the core of the program and contain
   6. A script that can be used as example.
 
 ### index.html
+
 This (file)[index.html] contains a very simple ~10-line HTML code that renders the progress bar to be updated by the Python loop.
 
 ### dynamic_update.js
+
 This (file)[dynamic_update.js] contains the JavaScript code used to communicate with the WebSocket Server and update the status of the progress bar.
 
 ## How It Works
+
 The example Python script works as follows.
   1. Initialize the HTTP and WebSocket servers in two separate threads.
   2. Start a loop. At every iteration, do:
@@ -31,6 +35,7 @@ The example Python script works as follows.
   3. The message is received by the Javascript WebSocket connection and the status of the progress bar is updated accordingly.
   
 ## How to use it in your projects
+
 You can clone this repository with:
 ``` git clone https://github.com/robinhenry/python-websocket-visualization```
 
