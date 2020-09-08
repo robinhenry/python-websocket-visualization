@@ -22,7 +22,7 @@ This [file](websocket_example.py) represents the core of the program and contain
 
 This [file](index.html) contains a very simple ~10-line HTML code that renders the progress bar to be updated by the Python loop.
 
-### dynamic_update.js
+### dynamicUpdate.js
 
 This [file](dynamicUpdate.js) contains the JavaScript code used to communicate with the WebSocket Server and update the status of the progress bar.
 
@@ -41,10 +41,8 @@ You can clone this repository with:
 
 There are very few changes that need to be made to use this framework for any web-based visualization:
   1. Modify the [index.html](index.html) file to your liking. Make sure to give an `id` property to all elements that you will want to dynamically update.
-  2. Modify the `ws.onmessage` function in the [dynamicUpdate.js](dynamicUpdate.js#L13) file (line 13) to update any HTML elements or interest upon recept of
-  a new message.
-  3. Modify the `update()` function in the [websocket_example.py](websocket_example.py#L84) file (line 84) to add to the WebSocket message any information 
-  required by 2.
+  2. Modify the [`ws.onmessage`](dynamicUpdate.js#L13-L16) function to update any HTML elements or interest upon recept of a new message.
+  3. Modify the [`update()`](websocket_example.py#L80-L85) function to add to the WebSocket message any information required by 2.
   4. That's it!
   
 I hope you will find it useful!
