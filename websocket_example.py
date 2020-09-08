@@ -2,12 +2,14 @@ from multiprocessing import Process
 from http.server import HTTPServer, SimpleHTTPRequestHandler
 import webbrowser
 import json
+import time
 
 from websocket_server import WebsocketServer
 from websocket import create_connection
 
 
 class WsServer(object):
+    """ A websocket server. """
 
     def __init__(self):
         self.PORT = 9001
@@ -22,7 +24,6 @@ class WsServer(object):
         process = Process(target=self._start_server)
         process.start()
         return process
-
 
     def _start_server(self):
         """ Start a WebSocket server. """
@@ -50,6 +51,7 @@ class WsServer(object):
 
 
 class HttpServer(object):
+    """ An HTTP server. """
     def __init__(self):
         self.PORT = 8000
         self.HOST = '127.0.0.1'
@@ -69,6 +71,7 @@ class HttpServer(object):
         print('Serving HTTP at : ' + self.HOST + ':' + str(self.PORT) + '...')
         httpd.serve_forever()
 
+
 def start():
     """ Initialize servers and client (browser window). """
     http_server = HttpServer()
@@ -77,12 +80,14 @@ def start():
 
     return http_server, ws_server
 
+
 def update(ws_address, new_value):
     """ Send an update message through WebSocket with a new value. """
     ws = create_connection(ws_address)
     message = json.dumps({'new_value': new_value})
     ws.send(message)
     ws.close()
+
 
 def close(http_server, ws_server):
     """ Terminate processes running in parallels. """
@@ -91,10 +96,17 @@ def close(http_server, ws_server):
 
 
 if __name__ == '__main__':
+
+    # Start the HTTP and the WebSocket servers.
     http_server, ws_server = start()
 
     while True:
+        # From 0% to 100%.
         for i in range(100):
             update(ws_server.address, i)
+            time.sleep(0.02)
+
+        # From 100% to 0%.
         for i in range(100):
             update(ws_server.address, 100 - i)
+            time.sleep(0.02)
